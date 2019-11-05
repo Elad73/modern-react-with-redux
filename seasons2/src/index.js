@@ -14,8 +14,8 @@ class App extends React.Component {
         );
     }
 
-    //react says we have to deifn render!!!
-    render() {
+    renderContent() {
+
         if(this.state.errorMessage && !this.state.lat){
             return <div>Error: {this.state.errorMessage}</div>
         }
@@ -24,9 +24,17 @@ class App extends React.Component {
             return <SeasonDisplay lat={this.state.lat}/>
         }
 
-        return <Loader />;
+        return <Loader message="Please accept location request"/>;
     }
 
+    //react says we have to deifn render!!!
+    render() {
+        return (
+            <div className="border red">
+                {this.renderContent()}
+            </div>
+        )
+    }
 }
 
 ReactDOM.render(<App />, document.getElementById('root'));
