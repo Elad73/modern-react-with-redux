@@ -2,13 +2,17 @@ import React from 'react';
 
 class SearchBar extends React.Component {
 
-    state = { term: ''};
+    state = { term: 'Hi there!'};
+
+    onFormSubmit(event) {
+        event.preventDefault(); //prevent the form from resubmitting upon default enter
+    }
 
 
     render(){
         return (
             <div className="ui segment">
-                <form className="ui form">
+                <form onSubmit={this.onFormSubmit} className="ui form">
                     <div className="field">
                         <label>Image Search</label>
                         <input 
