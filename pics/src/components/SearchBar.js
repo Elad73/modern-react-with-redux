@@ -4,8 +4,10 @@ class SearchBar extends React.Component {
 
     state = { term: 'Hi there!'};
 
-    onFormSubmit(event) {
-        event.preventDefault(); //prevent the form from resubmitting upon default enter
+    onFormSubmit = event => {
+        event.preventDefault(); //prevent the form from resubmitting upon default enter that casues the page to reresh itself
+
+        this.props.onSubmit(this.state.term); //used of props in a class based component, so we add the "this."
     }
 
 
