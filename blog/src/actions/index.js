@@ -1,11 +1,12 @@
 import _ from 'lodash';
 import jsonPlaceHolder from '../apis/jsonplaceholder';
 
-export const fetchPostsAndUsers = (id) => async dispatch => {
-    console.log('About to fetch posts')
+export const fetchPostsAndUsers = () => async (dispatch, getState) => {
     await dispatch(fetchPosts()); //to make sure we wait the request to be completed before we move forward
-    console.log('fetched poasts!')
-    //await dispatch(fetchUser(id));
+ 
+    const userIds = _.uniq(_.map(getState().posts, 'userId'));
+    userIds.forEach(id => dispatch(fetchUser(id))); 
+    console.log(userIds);
 };
 
 export const fetchPosts = () => {
@@ -22,6 +23,7 @@ export const fetchUser = (id) => async dispatch => {
     dispatch({ type: 'FETCH_USER', payload: response.data });
 };
 
+//The second method of memoize
 // export const fetchUser = id => dispatch => _fetchUser(id, dispatch);
 
 // const _fetchUser = _.memoize(async (id, dispatch) => {
