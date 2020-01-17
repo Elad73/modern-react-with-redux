@@ -1,6 +1,13 @@
 import _ from 'lodash';
 import jsonPlaceHolder from '../apis/jsonplaceholder';
 
+export const fetchPostsAndUsers = (id) => async dispatch => {
+    console.log('About to fetch posts')
+    await dispatch(fetchPosts()); //to make sure we wait the request to be completed before we move forward
+    console.log('fetched poasts!')
+    //await dispatch(fetchUser(id));
+};
+
 export const fetchPosts = () => {
     return async (dispatch, getState) => {
         const response = await jsonPlaceHolder.get('/posts');
