@@ -2,7 +2,7 @@ import React from 'react';
 import SongList from './SongList';
 import SongDetail from './SongDetail';
 
-const App = () => {
+const AppSongs = () => {
     return(
         <div className="ui container grid">
             <div className="ui row">
@@ -17,4 +17,4 @@ const App = () => {
     );
 };
 
-export default App;
+export default AppSongs;
