@@ -23,7 +23,7 @@ class GoogleAuth extends React.Component {
     onAuthChange = (isSignedIn) => {
         DragonConsole.entering("onAuthChange");
         if(isSignedIn) {
-            this.props.signIn();
+            this.props.signIn(this.auth.currentUser.get().getId());
         } else {
             this.props.signOut();
         }
