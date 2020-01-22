@@ -1,9 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { signIn, signOut } from '../actions';
+import DragonConsole from '../config/console';
 
 class GoogleAuth extends React.Component {
     componentDidMount() {
+        DragonConsole.entering("componentDidMount");
         //TODO:
         // console.log("Google client id3 -------------------------------------->" + JSON.stringify(process.env.REACT_APP_GOOGLE_CLIENT_ID))
         window.gapi.load('client:auth2', () => {
@@ -19,7 +21,7 @@ class GoogleAuth extends React.Component {
     }
 
     onAuthChange = (isSignedIn) => {
-        console.log("inside onAuthChange-------------------------------------------->");
+        DragonConsole.entering("onAuthChange");
         if(isSignedIn) {
             this.props.signIn();
         } else {
@@ -36,8 +38,8 @@ class GoogleAuth extends React.Component {
     };
 
     renderAuthButton() {  
-        console.log("inside renderAuthButton-------------------------------------------->");
-        console.log("this.props.isSignedIn -------------------------------------------->" + JSON.stringify(this.props.isSignedIn));
+        DragonConsole.entering("renderAuthButton");
+        DragonConsole.inspect("this.props.isSignedIn",this.props.isSignedIn);
         
         if(this.props.isSignedIn === null) {
             return null;
@@ -64,9 +66,9 @@ class GoogleAuth extends React.Component {
 };
 
 const mapStateToProps = state => {
-    console.log("inside mapStateToProps-------------------------------------------->");
-    console.log("state -------------------------------------------->" + JSON.stringify(state));
-    console.log("state.auth.isSignedIn -------------------------------------------->" + JSON.stringify(state.auth.isSignedIn));
+    DragonConsole.entering("mapStateToProps");
+    DragonConsole.inspect("state",state);
+    DragonConsole.inspect("state.auth.isSignedIn",state.auth.isSignedIn);
     return { isSignedIn: state.auth.isSignedIn };
 };
 
