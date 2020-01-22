@@ -3,7 +3,10 @@ const INITIAL_STATE = {
 };
 
 export default (state = INITIAL_STATE, action) => {
-    switch(action) {
+    console.log("inside authReducer --------------------------------------->");
+    console.log("state -------------------------------------------->" + JSON.stringify(state));
+    console.log("action -------------------------------------------->" + JSON.stringify(action));
+    switch(action.type) {
         case 'SIGN_IN': 
             return { ...state, isSignedIn: true};
         case 'SIGN_OUT':
