@@ -27,9 +27,9 @@ export const createStream = formValues => async (dispatch, getState) => {
     const response = await streams.post('/streams', { ...formValues, userId });
 
     dispatch({ type: CREATE_STREAM, payload: response.data });
-
-    //do some programmatic navigation to
-    //get the user bck to the root route
+    // do some programmatic navigation to
+    // get the user bck to the root route
+    
 };
 
 export const fetchStreams = () => async dispatch => {
