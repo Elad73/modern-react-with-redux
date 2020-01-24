@@ -9,6 +9,7 @@ import {
 } from '../actions/types';
 
 export default (state = {}, action) => {
+    console.log("----------------------------------insde streamReducer--------------action.payload:   " + JSON.stringify(action.payload));
     switch(action.type) {
         case FETCH_STREAMS:
             return { ...state, ..._.mapKeys(action.payload, 'id')}
