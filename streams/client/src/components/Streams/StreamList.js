@@ -21,7 +21,9 @@ class StreamList extends React.Component{
     }
     
     renderList() {
+        console.log(JSON.stringify(this.props.streams));
         return this.props.streams.map(stream => {
+            console.log(JSON.stringify(stream));
             return (
                 <div className="item" key={stream.id}>
                     {this.renderAdmin(stream)}
@@ -48,6 +50,7 @@ class StreamList extends React.Component{
     }
 
     render(){
+        console.log("INSIDE of render StreamList, logging props --> " + JSON.stringify(this.props));
         return (
             <div>
                 <h2>Streams</h2>

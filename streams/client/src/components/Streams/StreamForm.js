@@ -52,7 +52,7 @@ const validate = (formValues) => {
     }
 
     return errors;
-}
+};
 
 export default reduxForm({
     form: 'streamForm',

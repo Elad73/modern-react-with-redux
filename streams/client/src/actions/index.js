@@ -27,6 +27,8 @@ export const createStream = formValues => async (dispatch, getState) => {
     const { userId } = getState().auth;  
     const response = await streams.post('/streams', { ...formValues, userId });
 
+    console.log("RESPONSE After request to streams " + JSON.stringify(response.data));
+
     dispatch({ type: CREATE_STREAM, payload: response.data });
     // do some programmatic navigation to
     // get the user bck to the root route

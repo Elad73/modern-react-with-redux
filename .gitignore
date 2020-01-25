@@ -5,6 +5,10 @@
 /.pnp
 .pnp.js
 
+#db file
+./streams/api/db.json
+/streams/api/db.json
+
 # testing
 /coverage
 
@@ -22,3 +26,6 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+
+
