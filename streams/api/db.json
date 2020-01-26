@@ -1,52 +1,12 @@
 {
   "streams": [
-    {
-      "title": "My Stream",
-      "description": "This is the best stream ever",
-      "id": 1
-    },
-    {
-      "title": "My Stream",
-      "description": "This is the best stream ever",
-      "id": 2
-    },
+   
     {
       "title": "My Stream",
       "description": "This is the best stream ever",
       "id": 3
     },
-    {
-      "title": "Other Stream",
-      "description": "Here's some stream",
-      "id": 4
-    },
-    {
-      "title": "testing 2",
-      "description": "another stream to test",
-      "id": 5
-    },
-    {
-      "title": "chapter 249",
-      "description": "testing after chapter 249",
-      "id": 6
-    },
-    {
-      "title": "again marko",
-      "description": "again...",
-      "id": 7
-    },
-    {
-      "title": "creading with userID",
-      "description": "Usde id",
-      "userId": "117393769426306056925",
-      "id": 8
-    },
-    {
-      "title": "created the centerlized logic of StreamForm",
-      "description": "ye pe hurry!!",
-      "userId": "117393769426306056925",
-      "id": 9
-    },
+   
     {
       "title": "another",
       "description": "another",
@@ -58,52 +18,6 @@
       "description": "asdf",
       "userId": "117393769426306056925",
       "id": 11
-    },
-    {
-      "title": "hfgjf",
-      "description": "fhjfhjk",
-      "userId": "117393769426306056925",
-      "id": 12
-    },
-    {
-      "title": "At StreamList",
-      "description": "This is an updated one",
-      "id": 13
-    },
-    {
-      "title": "logging from create Stream Action creator",
-      "description": "another one bites the dust",
-      "id": 14
-    },
-    {
-      "title": "again",
-      "description": "again",
-      "userId": "117393769426306056925",
-      "id": 15
-    },
-    {
-      "title": "ff",
-      "description": "gg",
-      "userId": "117393769426306056925",
-      "id": 16
-    },
-    {
-      "title": "gdfhgdfh",
-      "description": "hdfgghdf",
-      "userId": "117393769426306056925",
-      "id": 17
-    },
-    {
-      "title": "qqq",
-      "description": "aaa",
-      "userId": "117393769426306056925",
-      "id": 18
-    },
-    {
-      "title": "It's the final count down!",
-      "description": "ha, ha ,ha.... ha....",
-      "userId": "117393769426306056925",
-      "id": 19
     }
   ]
 }
