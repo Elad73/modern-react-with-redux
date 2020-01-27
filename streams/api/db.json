@@ -1,17 +1,9 @@
 {
   "streams": [
-   
     {
       "title": "My Stream",
       "description": "This is the best stream ever",
       "id": 3
-    },
-   
-    {
-      "title": "another",
-      "description": "another",
-      "userId": "117393769426306056925",
-      "id": 10
     },
     {
       "title": "asd",
