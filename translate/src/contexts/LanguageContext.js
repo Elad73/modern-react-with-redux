@@ -10,7 +10,6 @@ import React from 'react';
     };
 
     render() {
-        console.log(this.onLanguageChange);
         return (
             <Context.Provider value={{ ...this.state, onLanguageChange: this.onLanguageChange }}>
                 {this.props.children}
