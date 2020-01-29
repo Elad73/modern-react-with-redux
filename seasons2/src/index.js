@@ -1,9 +1,32 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom';
 import SeasonDisplay from './SeasonDisplay';
 import Loader from './Loader';
 
-class App extends React.Component {
+const App = () => {
+    const [lat, setLat] = useState(null); //the first is the value that we want to store and the second is a function to change that value
+    const [errorMessage, setErrorMessage] = useState(null);
+
+    useEffect(() => {
+        window.navigator.geolocation.getCurrentPosition(
+            position => setLat(position.coords.latitude),
+            err => setErrorMessage(err.message)
+        );
+    }, []); //the empty array parameter, means only try to run this function one time in total for the entire life-cycle of this component
+
+    let content;
+    if(errorMessage) {
+        content = <div>Error: {errorMessage}</div>;
+    } else if(lat) {
+        content = <SeasonDisplay lat={lat} />;
+    } else {
+        content = <Loader message="Please accept location request"/>;
+    }
+
+    return <div className="border red">{content}</div>;
+};
+
+/* class App extends React.Component {
     
     state = { lat: null, errorMessage: '' }; //this is the state object 
 
@@ -35,6 +58,6 @@ class App extends React.Component {
             </div>
         )
     }
-}
+} */
 
 ReactDOM.render(<App />, document.getElementById('root'));
