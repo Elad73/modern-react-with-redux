@@ -2,7 +2,27 @@ import React, { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom';
 import SeasonDisplay from './SeasonDisplay';
 import Loader from './Loader';
+import useLocation from './useLocation';
 
+//Refactor 2: extracting the hooks logic (application logic) into a reusable code - at userLocation
+const App = () => {
+    const [lat, errorMessage] = useLocation();
+
+    let content;
+    if(errorMessage) {
+        content = <div>Error: {errorMessage}</div>;
+    } else if(lat) {
+        content = <SeasonDisplay lat={lat} />;
+    } else {
+        content = <Loader message="Please accept location request"/>;
+    }
+
+    return <div className="border red">{content}</div>;
+};
+
+ReactDOM.render(<App />, document.getElementById('root'));
+
+/* //Refactor 1: using hooks and changing the app to functional instead of class-based
 const App = () => {
     const [lat, setLat] = useState(null); //the first is the value that we want to store and the second is a function to change that value
     const [errorMessage, setErrorMessage] = useState(null);
@@ -24,9 +44,10 @@ const App = () => {
     }
 
     return <div className="border red">{content}</div>;
-};
+}; */
 
-/* class App extends React.Component {
+/* //Class base example
+class App extends React.Component {
     
     state = { lat: null, errorMessage: '' }; //this is the state object 
 
@@ -60,4 +81,4 @@ const App = () => {
     }
 } */
 
-ReactDOM.render(<App />, document.getElementById('root'));
+
